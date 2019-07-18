@@ -1,61 +1,7 @@
 // JavaScript Document
 $(document).ready(function(){
-	$(window).scroll(function(){
-		if($(window).scrollTop()<=590){
-			$('.bar').removeClass('show');
-			$('.first').addClass('show');
-		}else if($(window).scrollTop()<=1210){
-			$('.bar').removeClass('show');
-			$('.second').addClass('show');
-		}else if($(window).scrollTop()<=1830){
-			$('.bar').removeClass('show');
-			$('.third').addClass('show');
-		}else if($(window).scrollTop()<=2450){
-			$('.bar').removeClass('show');
-			$('.fourth').addClass('show');
-		}else if($(window).scrollTop()<=3070){
-			$('.bar').removeClass('show');
-			$('.fifth').addClass('show');
-		}else {
-			$('.bar').removeClass('show');
-			$('.sixth').addClass('show');
-		}
-	});
-	
 	$('.bar').on('click',function(){
 		$('.bar').removeClass('show');
-		switch($(this).attr("class")){
-			case "bar first":
-				$("body,html").animate({
-                scrollTop:450
-                }, 300);
-				break;
-			case "bar second":
-				$("body,html").animate({
-                scrollTop:1070
-                }, 300);
-				break;
-			case "bar third":
-				$("body,html").animate({
-                scrollTop:1690
-                }, 300);
-				break;
-			case "bar fourth":
-				$("body,html").animate({
-                scrollTop:2310
-                }, 300);
-				break;
-			case "bar fifth":
-				$("body,html").animate({
-                scrollTop:2930
-                }, 300);
-				break;
-			case "bar sixth":
-				$("body,html").animate({
-                scrollTop:3550
-                }, 300);
-				break;
-									}
 		$(this).addClass('show');
 	});
 	$('.video-first-frame').hover(function(){
@@ -76,9 +22,7 @@ $(document).ready(function(){
 		$('.button').css('opacity','1');
 	},function(){
 		$('.button').css('opacity','0');});
-//	$('.button').on('click',$sroll());
-});
-var timer;
+	var timer;
 	var down=function(operator){
 		for(var i=0;i<5;i++){
 			if($('.target').eq(i).hasClass('action')){
@@ -116,20 +60,14 @@ var timer;
 				break;
 			}
 		}
-		timer=window.setTimeout("down("+");",3000);
 	};
-	down("+");
-//	timer=setInterval(down("+"),500);
-	var butdown=document.getElementById("left");
-		//上一页按钮
-
-		var butup=document.getElementById("right");
-	butdown.onclick=function(){
-				clearTimeout(timer);
-				down("+");
-//			window.setInterval("mxx();",5000);
-			};
-			butup.onclick=function(){
-				clearTimeout(timer);
-				down("-");
-			};
+	timer=setInterval(down("+"),500);
+	$('.button').on('click',function(){
+		if($(this).hasClass('right')){
+			down("+");
+		}else{
+			down("-");
+		}
+	});
+//	$('.button').on('click',$sroll());
+});

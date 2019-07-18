@@ -1,860 +1,893 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>主页</title>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <title>主页</title>
 </head>
 <link rel="stylesheet" href="css/item.css" type="text/css" />
 <link rel="stylesheet" href="css/nav.css" type="text/css" />
-<script
-  src="https://code.jquery.com/jquery-3.3.1.js">
+<script src="https://code.jquery.com/jquery-3.3.1.js">
+</script>
+<script type="text/javascript">
+  $(function() {
+    //获取要定位元素距离浏览器顶部的距离
+    var navH = $(".catalog").offset().top;
+
+    //滚动条事件
+    $(window).scroll(function() {
+      //获取滚动条的滑动距离
+      var scroH = $(this).scrollTop() + 50;
+      //滚动条的滑动距离大于等于定位元素距离浏览器顶部的距离，就固定，反之就不固定
+      if (scroH >= navH) {
+        $(".catalog").css({
+          "position": "fixed",
+          "top": 50
+        });
+      } else if (scroH < navH) {
+        $(".catalog").css({
+          "position": "absolute",
+          "top": 300
+        });
+      }
+    })
+  })
 </script>
 
-<script type="text/javascript" src="js/nav.js"></script>
-<body>
-	<div class="nav-a">
-		<div class="log"><img alt="log" src="image/logo2.png"></div>
-		<ul>
-			<li >
-				<a class="nav-b" href="index.html" style="left:120px">主站
-				<div class="shader"></div>
-				</a>
-			</li>
-			<li >
-				<a class="nav-b" href="dynamic.html" style="left:240px">动态
-				<div class="shader"></div>
-				</a>
-			</li>
-			<li ><a class="nav-b" href="upload.html" style="left:360px">上传视频
-				<div class="shader"></div>
-				</a>
-			</li>
-			<li ><a class="nav-b" href="member.html" style="left:480px">会员中心
-				<div class="shader"></div>
-				</a>
-			</li>
-		</ul>
-		 <div id="box">
-        	<input type="text" class="nav-input" name="search" placeholder="请输入关键字">
-       	    <div id="search">搜索</div> 
-    	 </div>
-		<div class="ChatHead">
-			<a href="login.html"><img id="Chathead" src="image/h3.jpg" alt="头像"></a>
-		</div>
-	</div>
-	<div class="scorll">
-	   <ul>
-		 <li class="target action" style="transform:translateX(0%)"><div class="an es"><img src="image/pika12.jpg" alt="tupian"></div></li>
-		 <li class="target" style="transform:translateX(100%)"><div class="an"><img src="image/pika8.jpg" alt="tupian"></div></li>
-		 <li class="target" style="transform:translateX(200%)"><div class="an"><img src="image/pika9.jpg" alt="tupian"></div></li>
-		 <li class="target" style="transform:translateX(-200%)"><div class="an"><img src="image/pika10.jpg" alt="tupian"></div></li>
-		 <li class="target" style="transform:translateX(-100%)"><div class="an"><img src="image/pika13.jpg" alt="tupian"></div></li>
-	   </ul>
-<!--		上下翻页-->
-		<div class="button" id="left">&#8592</div>
-		<div class="button" id="right">&#8594</div>
-	   <ol>
-		 <li  class="dot" style="background-color: #FF6E00"></li>
-		 <li  class="dot"></li>
-		 <li  class="dot"></li>
-	     <li  class="dot"></li>
-		 <li  class="dot"></li>
-	   </ol>
-	</div>
-	<div class="catalog">
-		<div class="bar show first">舞蹈</div>
-		<div class="bar second" >教学</div>
-		<div class="bar third" >鬼畜</div>
-		<div class="bar fourth" >番剧</div>
-		<div class="bar fifth" >教育</div>
-		<div class="bar sixth" >生活Vlog</div>
-		<div class="bari" href="#"></div>
-	</div>
-	<div class="content">
-		<ul class="content-nav-box">
-			<li class="content-nav-li">
-				<a href="#"><img alt="宝儿姐" src="image/baoer1.png"></a>
-			</li>
-			<li class="content-nav-li">
-				<a href="#"><img alt="海贼王" src="image/haizei2.png"></a>
-			</li>
-			<li class="content-nav-li">
-				<a href="#"><img alt="鬼灭之刃" src="image/guimie3.png"></a>
-			</li>
-			<li class="content-nav-li">
-				<a href="#"><img alt="火影" src="image/huoying2.png"></a>
-			</li>
-		</ul>
-		<div class="content-box">
-			<div class="content-box-nav">
-				<h2 class="dance">舞蹈区</h2>
-				<a href="#" class="count">
-					<div class="count-all">全部</div>
-					<div class="button1">&#8250</div>
-				</a>
-			</div>
-			<div class="content-detail">
-				<a  class="video-first" href="video.html">
-					<div class="video-first-frame">
-					<div class="video-first-structure">
-						<img alt="first-video" src="image/h6.jpg">
-					</div>
-					<div class="video-first-cover"></div>
-					<div class="video-first-label">
-						<h5>视频的描述</h5>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-			</div>
-			<div class="content-detail">
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-			</div>
-		</div>
-		<div class="content-box">
-			<div class="content-box-nav">
-				<h2 class="teach">教学区</h2>
-				<a href="#" class="count">
-					<div class="count-all">全部</div>
-					<div class="button1">&#8250</div>
-				</a>
-			</div>
-			<div class="content-detail">
-				<a  class="video-first" href="video.html">
-					<div class="video-first-frame">
-					<div class="video-first-structure">
-						<img alt="first-video" src="image/h6.jpg">
-					</div>
-					<div class="video-first-cover"></div>
-					<div class="video-first-label">
-						<h5>视频的描述</h5>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-			</div>
-			<div class="content-detail">
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-			</div>
-		</div>
-		<div class="content-box">
-			<div class="content-box-nav">
-				<h2 class="demon">鬼畜区</h2>
-				<a href="#" class="count">
-					<div class="count-all">全部</div>
-					<div class="button1">&#8250</div>
-				</a>
-			</div>
-			<div class="content-detail">
-				<a  class="video-first" href="video.html">
-					<div class="video-first-frame">
-					<div class="video-first-structure">
-						<img alt="first-video" src="image/h6.jpg">
-					</div>
-					<div class="video-first-cover"></div>
-					<div class="video-first-label">
-						<h5>视频的描述</h5>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-			</div>
-			<div class="content-detail">
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-			</div>
-		</div>
-		<div class="content-box">
-			<div class="content-box-nav">
-				<h2 class="anime">番剧区</h2>
-				<a href="#" class="count">
-					<div class="count-all">全部</div>
-					<div class="button1">&#8250</div>
-				</a>
-			</div>
-			<div class="content-detail">
-				<a  class="video-first" href="video.html">
-					<div class="video-first-frame">
-					<div class="video-first-structure">
-						<img alt="first-video" src="image/h6.jpg">
-					</div>
-					<div class="video-first-cover"></div>
-					<div class="video-first-label">
-						<h5>视频的描述</h5>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-			</div>
-			<div class="content-detail">
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-			</div>
-		</div>
-		<div class="content-box">
-			<div class="content-box-nav">
-				<h2 class="education">教育区</h2>
-				<a href="#" class="count">
-					<div class="count-all">全部</div>
-					<div class="button1">&#8250</div>
-				</a>
-			</div>
-			<div class="content-detail">
-				<a  class="video-first" href="video.html">
-					<div class="video-first-frame">
-					<div class="video-first-structure">
-						<img alt="first-video" src="image/h6.jpg">
-					</div>
-					<div class="video-first-cover"></div>
-					<div class="video-first-label">
-						<h5>视频的描述</h5>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-			</div>
-			<div class="content-detail">
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-			</div>
-		</div>
-		<div class="content-box">
-			<div class="content-box-nav">
-				<h2 class="Vlog">生活Vlog</h2>
-				<a href="#" class="count">
-					<div class="count-all">全部</div>
-					<div class="button1">&#8250</div>
-				</a>
-			</div>
-			<div class="content-detail">
-				<a  class="video-first" href="video.html">
-					<div class="video-first-frame">
-					<div class="video-first-structure">
-						<img alt="first-video" src="image/h6.jpg">
-					</div>
-					<div class="video-first-cover"></div>
-					<div class="video-first-label">
-						<h5>视频的描述</h5>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-			</div>
-			<div class="content-detail">
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-				<a  class="video-common" href="video.html">
-					<div class="video-common-frame">
-					<div class="video-common-structure">
-						<img alt="common-video" src="image/h6.jpg">
-					</div>
-					<div class="video-common-cover"></div>
-					<div class="video-common-label">
-						<p>视频的描述</p>
-						<p>作者</p>
-						<p>标签</p>
-					</div>
-					</div>
-				</a>
-			</div>
-		</div>
-		</div>
-</body>
 <script type="text/javascript" src="js/item.js"></script>
+<script type="text/javascript" src="js/nav.js"></script>
+
+<body>
+  <div class="nav-a">
+    <div class="log"><img alt="log" src="image/logo2.png"></div>
+    <ul>
+      <li>
+        <a class="nav-b" href="index.html" style="left:120px">主站
+          <div class="shader"></div>
+        </a>
+      </li>
+      <li>
+        <a class="nav-b" href="dynamic.html" style="left:240px">动态
+          <div class="shader"></div>
+        </a>
+      </li>
+      <li><a class="nav-b" href="upload.html" style="left:360px">上传视频
+          <div class="shader"></div>
+        </a>
+      </li>
+      <li><a class="nav-b" href="member.html" style="left:480px">会员中心
+          <div class="shader"></div>
+        </a>
+      </li>
+    </ul>
+    <div id="box">
+      <input type="text" class="nav-input" name="search" placeholder="请输入关键字">
+      <div id="search">搜索</div>
+    </div>
+    <div class="ChatHead">
+      <a href="login.html"><img id="Chathead" src="image/h3.jpg" alt="头像"></a>
+    </div>
+  </div>
+  <div class="scorll">
+    <ul>
+      <li class="target action" style="transform:translateX(0%)"><div class="an es"><img src="image/pika12.jpg" alt="tupian"></div></li>
+ 		 <li class="target" style="transform:translateX(100%)"><div class="an"><img src="image/pika8.jpg" alt="tupian"></div></li>
+ 		 <li class="target" style="transform:translateX(200%)"><div class="an"><img src="image/pika9.jpg" alt="tupian"></div></li>
+ 		 <li class="target" style="transform:translateX(-200%)"><div class="an"><img src="image/pika10.jpg" alt="tupian"></div></li>
+ 		 <li class="target" style="transform:translateX(-100%)"><div class="an"><img src="image/pika13.jpg" alt="tupian"></div></li>
+    </ul>
+    <!--		上下翻页-->
+    <div class="button" id="left">&#8592</div>
+		<div class="button" id="right">&#8594</div>
+    <ol>
+      <li class="dot" style="background-color: #ffc700"></li>
+      <li class="dot"></li>
+      <li class="dot"></li>
+      <li class="dot"></li>
+      <li class="dot"></li>
+    </ol>
+  </div>
+  <div class="catalog" style="background-image:url(image/dh.jpg)">
+    <a class="bar show" href="#dance">舞蹈</a>
+    <a class="bar" href="#teach">教学</a>
+    <a class="bar" href="#demon">鬼畜</a>
+    <a class="bar" href="#anime">番剧</a>
+    <a class="bar" href="#education">教育</a>
+    <a class="bar" href="#Vlog">生活Vlog</a>
+    <a class="bari" href="#"></a>
+  </div>
+  <div class="content">
+    <ul class="content-nav-box">
+      <li class="content-nav-li">
+        <a href="#"><img alt="宝儿姐" src="image/pika6.jpg"></a>
+      </li>
+      <li class="content-nav-li">
+        <a href="#"><img alt="海贼王" src="image/pika3.jpg"></a>
+      </li>
+      <li class="content-nav-li">
+        <a href="#"><img alt="鬼灭之刃" src="image/pika4.jpg"></a>
+      </li>
+      <li class="content-nav-li">
+        <a href="#"><img alt="火影" src="image/pika7.jpg"></a>
+      </li>
+    </ul>
+    <div class="content-box">
+      <a name="dance"></a>
+      <div class="content-box-nav">
+        <h2>舞蹈区</h2>
+        <a href="#" class="count">
+          <div class="count-all">全部</div>
+          <div class="button1">&#8250</div>
+        </a>
+      </div>
+      <div class="content-detail">
+        <a class="video-first" href="video.html">
+          <div class="video-first-frame">
+            <div class="video-first-structure">
+              <img alt="first-video" src="image/pika1.jpg" onmouseover="src='image/pikadong1.gif'" onmouseout="src='image/pika1.jpg'">
+            </div>
+            <div class="video-first-cover"></div>
+            <div class="video-first-label">
+              <h5>视频的描述</h5>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="content-detail">
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="content-box">
+      <a name="teach"></a>
+      <div class="content-box-nav">
+        <h2>教学区</h2>
+        <a href="#" class="count">
+          <div class="count-all">全部</div>
+          <div class="button1">&#8250</div>
+        </a>
+      </div>
+      <div class="content-detail">
+        <a class="video-first" href="video.html">
+          <div class="video-first-frame">
+            <div class="video-first-structure">
+              <img alt="first-video" src="image/h6.jpg">
+            </div>
+            <div class="video-first-cover"></div>
+            <div class="video-first-label">
+              <h5>视频的描述</h5>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="content-detail">
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="content-box">
+      <a name="demon"></a>
+      <div class="content-box-nav">
+        <h2>鬼畜区</h2>
+        <a href="#" class="count">
+          <div class="count-all">全部</div>
+          <div class="button1">&#8250</div>
+        </a>
+      </div>
+      <div class="content-detail">
+        <a class="video-first" href="video.html">
+          <div class="video-first-frame">
+            <div class="video-first-structure">
+              <img alt="first-video" src="image/h6.jpg">
+            </div>
+            <div class="video-first-cover"></div>
+            <div class="video-first-label">
+              <h5>视频的描述</h5>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="content-detail">
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="content-box">
+      <a name="anime"></a>
+      <div class="content-box-nav">
+        <h2>番剧区</h2>
+        <a href="#" class="count">
+          <div class="count-all">全部</div>
+          <div class="button1">&#8250</div>
+        </a>
+      </div>
+      <div class="content-detail">
+        <a class="video-first" href="video.html">
+          <div class="video-first-frame">
+            <div class="video-first-structure">
+              <img alt="first-video" src="image/h6.jpg">
+            </div>
+            <div class="video-first-cover"></div>
+            <div class="video-first-label">
+              <h5>视频的描述</h5>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="content-detail">
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="content-box">
+      <a name="education"></a>
+      <div class="content-box-nav">
+        <h2>教育区</h2>
+        <a href="#" class="count">
+          <div class="count-all">全部</div>
+          <div class="button1">&#8250</div>
+        </a>
+      </div>
+      <div class="content-detail">
+        <a class="video-first" href="video.html">
+          <div class="video-first-frame">
+            <div class="video-first-structure">
+              <img alt="first-video" src="image/h6.jpg">
+            </div>
+            <div class="video-first-cover"></div>
+            <div class="video-first-label">
+              <h5>视频的描述</h5>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="content-detail">
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="content-box">
+      <a name="Vlog"></a>
+      <div class="content-box-nav">
+        <h2>生活Vlog</h2>
+        <a href="#" class="count">
+          <div class="count-all">全部</div>
+          <div class="button1">&#8250</div>
+        </a>
+      </div>
+      <div class="content-detail">
+        <a class="video-first" href="video.html">
+          <div class="video-first-frame">
+            <div class="video-first-structure">
+              <img alt="first-video" src="image/h6.jpg">
+            </div>
+            <div class="video-first-cover"></div>
+            <div class="video-first-label">
+              <h5>视频的描述</h5>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="content-detail">
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+        <a class="video-common" href="video.html">
+          <div class="video-common-frame">
+            <div class="video-common-structure">
+              <img alt="common-video" src="image/h6.jpg">
+            </div>
+            <div class="video-common-cover"></div>
+            <div class="video-common-label">
+              <p>视频的描述</p>
+              <p>作者</p>
+              <p>标签</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
 <!--	<script type="text/javascript" src="main.js"></script>-->
+
 </html>
